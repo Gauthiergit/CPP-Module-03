@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:04:46 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/05 12:13:39 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:35:04 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include <iostream>
 #include <string>
+
+#define BLUE "\033[94m"
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
 
 class ClapTrap
 {
