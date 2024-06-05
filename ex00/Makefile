@@ -1,5 +1,5 @@
 # Program name
-NAME    	= triangle
+NAME    	= open
 
 # Compiler options
 CXX     = c++ 
@@ -16,9 +16,7 @@ GREEN = \033[92m
 BLUE = \033[94m
 
 SRCS  = main.cpp \
-		Fixed.cpp \
-		bsp.cpp \
-		Point.cpp
+		ClapTrap.cpp \
 
 OBJ = $(patsubst $(DIR_SRC)%.cpp,$(DIR_OBJ)%.o,$(SRCS))
 
@@ -27,7 +25,7 @@ $(NAME): $(OBJ)
 		@echo "$(BOLD)$(BLUE)🛠️ 🚧     Compiling project...     🚧🛠️$(RESET_COLOR)"
 		@echo "\n"
 		@$(CXX) $(CFLAGS) -o $(NAME) $(OBJ)
-		@echo "$(BOLD)$(GREEN)📐   triangle ready to use   📐$(RESET_COLOR)"
+		@echo "$(BOLD)$(GREEN)🪤   open ready to use   🪤$(RESET_COLOR)"
 
 $(DIR_OBJ):
 	@mkdir -p $(DIR_OBJ)
