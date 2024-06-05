@@ -17,6 +17,7 @@ BLUE = \033[94m
 
 SRCS  = main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp
 
 OBJ = $(patsubst $(DIR_SRC)%.cpp,$(DIR_OBJ)%.o,$(SRCS))
 
