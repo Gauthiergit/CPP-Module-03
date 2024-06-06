@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:56:05 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/05 16:14:23 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 11:55:13 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 ClapTrap::ClapTrap() : _Name(""), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	std::cout << GREEN << "Trap deployed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap deployed" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string Name) : _Name(Name), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	std::cout << GREEN << "Trap " << YELLOW << Name << GREEN << " deployed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap " << YELLOW << Name << GREEN << " deployed" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
-	std::cout << GREEN << "Copy Trap of " << YELLOW << copy._Name << GREEN << " deployed" << RESET << std::endl;
+	std::cout << GREEN << "Copy ClapTrap of " << YELLOW << copy._Name << GREEN << " deployed" << RESET << std::endl;
 	*this = copy;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << GREEN << "Trap " << YELLOW << this->_Name << GREEN << " destroyed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap " << YELLOW << this->_Name << GREEN << " destroyed" << RESET << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap &change)
@@ -63,13 +63,10 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->_EnergyPoint > 0)
+	if (this->_EnergyPoint > 0 && amount < (unsigned int)_HitPoint)
 		this->_HitPoint -= amount;
 	if (this->_HitPoint <= 0)
-	{
-		this->_HitPoint = 0;
 		std::cout << RED << "Hit point: " << this->_HitPoint << RESET << std::endl;
-	}
 	else
 		std::cout << BLUE << "Hit point: " << this->_HitPoint << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:39:47 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/05 17:15:30 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 11:22:03 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ScavTrap : public ClapTrap
 	ScavTrap&	operator=(const ScavTrap &change);
 
 	void	attack(const std::string& target);
+	void	guardGate();
 };
 
 #endif

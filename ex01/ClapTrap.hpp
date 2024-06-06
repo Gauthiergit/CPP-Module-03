@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:04:46 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/05 14:35:04 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 11:14:09 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 	
 	std::string _Name;
 	int			_HitPoint;
