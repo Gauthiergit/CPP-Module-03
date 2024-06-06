@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:56:05 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/06 16:11:22 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 17:42:47 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ClapTrap::ClapTrap() : _Name(""), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	std::cout << GREEN << "Trap deployed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap deployed" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string Name) : _Name(Name), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	std::cout << GREEN << "Trap " << YELLOW << Name << GREEN << " deployed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap " << YELLOW << Name << GREEN << " deployed" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << GREEN << "Trap " << YELLOW << this->_Name << GREEN << " destroyed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap " << YELLOW << this->_Name << GREEN << " destroyed" << RESET << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap &change)

@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 12:15:00 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/06 12:34:13 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 17:48:19 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	main()
 	std::cout << std::endl;
 	Ttrap.highFivesGuys();
 	std::cout << std::endl;
-	for(int i = 0; i < 5; i++)
+	for(int i = 0; i < 4; i++)
 	{
 		Ttrap.attack("Cat");
-		Ttrap.takeDamage(Strap.getAttackDamage());
+		Ttrap.takeDamage(Ttrap.getAttackDamage());
 	}
 	return (0);
 }
