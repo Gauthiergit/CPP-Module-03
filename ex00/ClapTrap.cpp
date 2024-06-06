@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:56:05 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/06 12:27:59 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 16:11:22 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->_EnergyPoint > 0 && amount <= (unsigned int)_HitPoint)
+	if (this->_EnergyPoint > 0 && amount <= (unsigned int)this->_HitPoint)
 		this->_HitPoint -= amount;
 	if (this->_HitPoint <= 0)
 		std::cout << RED << "Hit point: " << this->_HitPoint << RESET << std::endl;
@@ -79,11 +79,17 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_EnergyPoint--;
 		std::cout << BLUE << "ClapTrap " << YELLOW << this->_Name << GREEN << " be repaired and regains " <<
 			amount << " points of hit !" << RESET << std::endl;
+		std::cout << BLUE << "Energy point: " << this->_EnergyPoint << RESET << std::endl;
 		std::cout << BLUE << "Hit point: " << this->_HitPoint << RESET << std::endl;
 	}
 	else
-		std::cout << RED << "No more Energy point" << RESET << std::endl;
-	std::cout << BLUE << "Energy point: " << this->_EnergyPoint << RESET << std::endl;
+	{
+		std::cout << RED << "No more Energy point\nEnergy point: " << this->_EnergyPoint << RESET << std::endl;
+		if (this->_HitPoint > 0)
+			std::cout << BLUE << "Hit point: " << this->_HitPoint << RESET << std::endl;
+		else
+			std::cout << RED << "Hit point: " << this->_HitPoint << RESET << std::endl;
+	}
 }
 
 int	ClapTrap::getAttackDamage(void) const

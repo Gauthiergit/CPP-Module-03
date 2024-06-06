@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:13:04 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/06 11:47:42 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 17:32:26 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 {
-	std::cout << GREEN << "ScavTrap " << YELLOW << Name << GREEN << " deployed" << RESET << std::endl;
-	_HitPoint = 100;
-	_EnergyPoint = 50;
-	_AttackDamage = 20;
+	std::cout << GREEN << "ScavTrap " << YELLOW << this->_Name << GREEN << " deployed" << RESET << std::endl;
+	this->_HitPoint = 100;
+	this->_EnergyPoint = 50;
+	this->_AttackDamage = 20;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap &change)
@@ -66,5 +66,5 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << YELLOW << "ScavTrap is now in Gate keeper mode !!" << RESET << std::endl;
+	std::cout << GREEN << "ScavTrap is now in Gate keeper mode !!" << RESET << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:56:05 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/06 16:11:02 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/06 17:31:08 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap() : _Name(""), _HitPoint(10), _EnergyPoint(10), _AttackDamage
 
 ClapTrap::ClapTrap(std::string Name) : _Name(Name), _HitPoint(10), _EnergyPoint(10), _AttackDamage(0)
 {
-	std::cout << GREEN << "ClapTrap " << YELLOW << Name << GREEN << " deployed" << RESET << std::endl;
+	std::cout << GREEN << "ClapTrap " << YELLOW << this->_Name << GREEN << " deployed" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
@@ -65,7 +65,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_EnergyPoint > 0 && amount <= (unsigned int)this->_HitPoint)
 		this->_HitPoint -= amount;
-	if (this->_HitPoint <= 0)
+	if (this->_HitPoint == 0)
 		std::cout << RED << "Hit point: " << this->_HitPoint << RESET << std::endl;
 	else
 		std::cout << BLUE << "Hit point: " << this->_HitPoint << RESET << std::endl;
